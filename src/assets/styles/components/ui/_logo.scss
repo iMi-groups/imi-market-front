@@ -1,0 +1,38 @@
+/****************
+** Logo Styles **
+****************/
+.logo {
+    position: relative;
+    height: px-to-rem(36px);
+    flex-shrink: 0;
+
+    a {
+        @include d-flex(row, center, unset, nowrap, px-to-rem(10px));
+    }
+
+    .icon {
+        position: relative;
+        width: px-to-rem(36px);
+        height: px-to-rem(36px);
+        border-radius: 5px;
+        overflow: hidden;
+
+        svg {
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            
+            path {
+                fill: $btn--color;
+            }
+        }
+    }
+
+    .text {
+        font-family: 'Belanosima', sans-serif;
+        font-size: px-to-rem(20px);
+        font-weight: 600;
+        line-height: 110%;
+        color: $btn--color;
+    }
+}

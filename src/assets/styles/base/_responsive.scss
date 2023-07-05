@@ -1,0 +1,20 @@
+/**********************
+** Responsive Styles **
+**********************/
+@include breakpoint--x-lg {
+    :root {
+        font-size: 15px;
+    }
+}
+
+@include breakpoint--lg {
+    :root {
+        font-size: 14px;
+    }
+}
+
+@include breakpoint--md {
+    :root {
+        font-size: 13px;
+    }
+}

@@ -1,0 +1,75 @@
+/*******************
+** SideBar Styles **
+*******************/
+.side-bar {
+    @include d-flex(column, unset, unset);
+    position: fixed;
+    top: 0;
+    left: -100%;
+    max-width: 450px;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    z-index: 9999;
+    transition: all .3s ease;
+
+    &.open {
+        left: 0;
+    }
+
+    &__header {
+        @include d-flex(row, center, space-between);
+        padding: px-to-rem(20px);
+        border-bottom: 1px solid $border--color;
+    }
+
+    &-close__icon {
+        @include d-flex(unset, center, center);
+        position: relative;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background-color: $secondary-bg--color;
+        transition: all .3s ease;
+        cursor: pointer;
+
+        svg {
+            width: 12px;
+            height: 12px;
+
+            path {
+                transition: all .3s ease;
+            }
+        }
+
+        &:hover {
+            background-color: $btn--color;
+
+            svg path {
+                fill: #fff;
+            }
+        }
+
+        @include breakpoint--sm(500px) {
+            background-color: $btn--color;
+
+            svg path {
+                fill: #fff;
+            }
+        } 
+    }
+
+    &__content {
+        padding: px-to-rem(10px) px-to-rem(20px);
+
+        .navbar__links {
+            @include d-flex(column, unset, unset);
+
+            .navbar__link {
+                @include d-flex(unset, center, unset);
+                width: 100%;
+                height: 44px;
+            }
+        }
+    }
+}

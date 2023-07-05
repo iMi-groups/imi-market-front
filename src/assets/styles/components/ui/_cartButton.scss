@@ -1,0 +1,38 @@
+@use 'sass:color';
+
+/***********************
+** Cart Button Styles **
+***********************/
+.cart__button {
+    @include d-flex(column, unset, unset, nowrap, px-to-rem(12px));
+    position: fixed;
+    top: 50%;
+    right: 0;
+    padding: px-to-rem(12px);
+    padding-top: px-to-rem(14px);
+    background-color: $btn--color;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    font-size: px-to-rem(14px);
+    font-weight: 600;
+    line-height: px-to-percent(20px, 14px);
+    color: #fff;
+    transform: translateY(-50%);
+    z-index: 999;
+    cursor: pointer;
+
+    @include breakpoint--lg(1024px) {
+        display: none;
+    }
+
+    .total__items {
+        @include d-flex(row, center, unset, nowrap, px-to-rem(8px));
+    }
+
+    .total__price {
+        padding: px-to-rem(8px);
+        background-color: #fff;
+        border-radius: 5px;
+        color: $btn--color;
+    }
+}

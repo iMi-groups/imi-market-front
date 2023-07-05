@@ -1,0 +1,37 @@
+@use 'sass:color';
+
+/*************************
+** Products List Styles **
+*************************/
+.products__list {
+    @include d-flex(row, unset, unset, wrap, px-to-rem(10px));
+    padding: 30px;
+
+    @include breakpoint--md(1100px) {
+        padding: 10px;
+    }
+
+    .product-card {
+        width: calc(100% / 4 - 10px);
+
+        @include breakpoint--lg(1334px) {
+            width: calc(100% / 3 - 10px);
+        }
+
+        @include breakpoint--lg(1280px) {
+            width: calc(100% / 4 - 10px);
+        }
+
+        @include breakpoint--md(1100px) {
+            width: calc(100% / 3 - 10px);
+        }
+
+        @include breakpoint--sm-extra(805px) {
+            width: calc(100% / 2 - 10px);
+        }
+
+        @include breakpoint--sm(544px) {
+            width: 100%;
+        }
+    }
+}

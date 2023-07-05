@@ -1,0 +1,48 @@
+/**************************
+** Page Not Found Styles **
+**************************/
+.page-not-found {
+    @include d-flex(column, center, center);
+    position: fixed;
+    max-width: 100vw;
+    width: 100%;
+    max-height: 100vh;
+    height: 100%;
+
+    .error-code {
+        font-size: px-to-rem(14px);
+        line-height: px-to-percent(20px, 14px);
+        letter-spacing: 1.4px;
+        text-transform: uppercase;
+        margin-bottom: px-to-rem(20px);
+        color: $secondary-grey--color;
+    }
+
+    .title {
+        font-size: px-to-rem(30px);
+        font-weight: 700;
+        line-height: px-to-percent(36px, 30px);
+        margin-bottom: px-to-rem(20px);
+        color: #000;
+    }
+
+    .img {
+        position: relative;
+        max-width: px-to-rem(600px);
+        width: 100%;
+        max-height: px-to-rem(500px);
+        height: 100%;
+
+        img {
+            object-fit: contain;
+        }
+    }
+
+    .link-to-home {
+        font-size: 16px;
+        line-height: 24px;
+        text-decoration: underline;
+        margin-top: px-to-rem(40px);
+        color: #000;
+    }
+}

@@ -1,0 +1,87 @@
+/**************************
+** Register Modal Styles **
+**************************/
+.register-modal {
+    @include d-flex(column, center, unset);
+    @include absolute-center();
+    max-width: px-to-rem(420px);
+    width: 100%;
+    padding: px-to-rem(32px);
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
+
+    @include breakpoint--sm(450px) {
+        max-width: 100%;
+        height: 100vh;
+        justify-content: center;
+    }
+
+    .logo {
+        margin-bottom: 5px;
+    }
+
+    .description {
+        position: relative;
+        font-size: px-to-rem(16px);
+        font-style: italic;
+        line-height: px-to-percent(24px, 16px);
+        font-weight: 400;
+        margin-bottom: px-to-rem(24px);
+        color: $grey--color;
+    }
+
+    .input {
+        position: relative;
+        margin-bottom: px-to-rem(16px);
+
+        @include breakpoint--sm(450px) {
+            max-width: 100%;
+        }
+
+        .icon {
+            position: absolute;
+            top: 50%;
+            right: px-to-rem(16px);
+            width: px-to-rem(20px);
+            height: px-to-rem(20px);
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+    }
+
+    .btn {
+        margin-bottom: px-to-rem(24px);
+    }
+
+    .seperator {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        margin-bottom: px-to-rem(24px);
+        border: none;
+        border-top: 1px solid $border--color;
+
+        legend {
+            font-size: px-to-rem(14px);
+            line-height: px-to-percent(20px, 14px);
+            padding: 0 px-to-rem(8px);
+            margin: 0 auto;
+            color: $primary-black--color;
+        }
+    }
+
+    .link-to-login {
+        font-size: px-to-rem(16px);
+        line-height: px-to-percent(24px, 16px);
+        font-weight: 400;
+        color: $grey--color;
+
+        .login-link {
+            text-decoration: underline;
+            font-weight: 600;
+            margin-left: px-to-rem(6px);
+            color: $btn--color;
+        }
+    }
+}

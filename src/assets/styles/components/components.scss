@@ -1,0 +1,26 @@
+// Card
+@import './card/miniCard';
+@import './card/productCard';
+
+// Form
+@import './form/form';
+
+// Loading
+@import './loading/loading';
+
+// Modal
+@import './modal/asideMenu.scss';
+@import './modal/productModal.scss';
+@import './modal/registerModal';
+@import './modal/sideBar';
+
+// Ui
+@import './ui/buttons';
+@import './ui/cartButton';
+@import './ui/icons';
+@import './ui/logo';
+
+// List
+@import './lists/productsList';
+@import './alert/alert';
+@import './lists/categoriesList';

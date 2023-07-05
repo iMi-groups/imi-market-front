@@ -1,0 +1,222 @@
+@use 'sass:color';
+
+/******************
+** Button Styles **
+******************/
+.btn {
+    @include d-flex(row, center, center, nowrap, px-to-rem(10px));
+    position: relative;
+    font-size: px-to-rem(14px);
+    font-weight: 600;
+    transition: $tr-03--ease;
+    cursor: pointer;
+
+    &.card-btn {
+        @include d-flex(row, center, space-between);
+        position: relative;
+        width: 100%;
+        height: px-to-rem(36px);
+        gap: 0;
+        background-color: $secondary-bg--color;
+        border-radius: 5px;
+        overflow: hidden;
+        transition: $tr-03--ease;
+
+        &:hover,
+        &.active {
+            background-color: $btn--color;
+
+            .content {
+                color: #fff;
+            }
+
+            .controller {
+                background-color: color.adjust($btn--color, $lightness: -5%);
+
+                .plus,
+                .minus {
+                    color: #fff;
+                }
+            }
+        }
+
+        &.active {
+            .controller {
+                background-color: $btn--color;
+
+                &:hover {
+                    background-color: color.adjust($btn--color, $lightness: -5%);
+                }
+
+                &.minus__wrapper {
+                    display: flex;
+                }
+            }
+        }
+
+        .content {
+            @include d-flex(row, center, center);
+            flex: 1 1 auto;
+            height: 100%;
+            font-size: px-to-rem(14px);
+            line-height: px-to-percent(14px, 20px);
+            font-weight: 400;
+            color: #4b5563;
+            transition: $tr-03--ease;
+        }
+
+        .controller {
+            @include d-flex(unset, center, center);
+            position: relative;
+            width: px-to-rem(36px);
+            height: 100%;
+            background-color: $border--color;
+            transition: $tr-03--ease;
+            cursor: pointer;
+
+            &.minus__wrapper {
+                display: none;
+            }
+
+            .plus,
+            .minus {
+                position: relative;
+                transform: translateY(-10%);
+                font-size: px-to-rem(20px);
+                line-height: px-to-percent(20px, 20px);
+                font-weight: 400;
+                color: #4b5563;
+                transition: $tr-03--ease;
+            }
+        }
+
+        &.lg {
+            width: px-to-rem(288px);
+            height: px-to-rem(56px);
+            background-color: $btn--color;
+            
+            .content {
+                color: #fff;
+            }
+
+            .controller {
+                display: none;
+                width: px-to-rem(56px);
+            }
+
+            &.active {
+                .controller {
+                    display: flex;
+                }
+
+                &:hover {
+                    background-color: $btn--color;
+                }
+            }
+
+            &:hover {
+                background-color: color.adjust($btn--color, $lightness: -5%);
+            }
+        }
+    }
+
+    &.primary {
+        background-color: $btn--color;
+        color: #fff;
+
+        &:hover {
+            background-color: color.adjust($btn--color, $lightness: -5%);
+        }
+
+        &.sm {
+            height: px-to-rem(24px);
+            font-size: px-to-rem(12px);
+            line-height: px-to-percent(12px, 24px);
+            font-weight: 600;
+            padding: 0 px-to-rem(10px);
+            border-radius: 5px;
+
+            &.un-hover {
+                cursor: default;
+            }
+            
+            &.un-hover:hover {
+                background-color: $btn--color;
+            }
+        }
+        
+        &.md {
+            height: px-to-rem(32px);
+            padding: 0 px-to-rem(12px);
+            border-radius: 5px;
+        }
+
+        &.lg {
+            height: px-to-rem(56px);
+            padding: 0 px-to-rem(32px);
+            border-radius: 10px;
+
+            &.search {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+        }
+
+        &.full {
+            width: 100%;
+            border-radius: 5px;
+        }
+    }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    @include d-flex(unset, center, center);
+    position: absolute;
+    top: 50%;
+    width: px-to-rem(36px);
+    height: px-to-rem(36px);
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px;
+    border-radius: 50%;
+    transition: $tr-03--ease;
+    z-index: 9;
+
+    &::after,
+    &::before {
+        display: none;
+    }
+
+    &:hover {
+        background-color: $btn--color;
+
+        .icon path {
+            fill: #fff;
+        }
+    }
+
+    .icon {
+        @include d-flex(unset, center, center);
+        position: relative;
+        width: px-to-rem(18px);
+        height: px-to-rem(18px);
+
+        path {
+            transition: $tr-03--ease;
+        }
+    }
+}
+
+.swiper-button-next {
+    right: 0;
+    transform: translate(-30%, -50%);
+
+    .icon {
+        transform: rotate(180deg);
+    }
+}
+
+.swiper-button-prev {
+    left: 0;
+    transform: translate(30%, -50%);
+}

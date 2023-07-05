@@ -1,0 +1,120 @@
+/*********************
+** Mini Card Styles **
+*********************/
+.mini-card {
+    @include d-flex(row, center, unset, nowrap, px-to-rem(20px));
+    position: relative;
+    max-height: px-to-rem(128px);
+    width: 100%;
+    height: 100%;
+    padding: px-to-rem(16px) px-to-rem(24px);
+    background-color: #fff;
+    border-bottom: 1px solid #e5e7ebbf;
+
+    .quantity-controller {
+        @include d-flex(column, center, unset);
+        position: relative;
+        width: px-to-rem(32px);
+        height: px-to-rem(96px);
+        background-color: $secondary-bg--color;
+        border-radius: 9999px;
+        overflow: hidden;
+
+        .controller {
+            @include d-flex(unset, center, center);
+            position: relative;
+            width: 100%;
+            height: px-to-rem(28px);
+            font-size: px-to-rem(18px);
+            font-weight: 600;
+            color: $primary-black--color;
+            transition: $tr-03--ease;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #e9ebee;
+            }
+        }
+
+        .quantity {
+            @include d-flex(unset, center, center);
+            position: relative;
+            width: 100%;
+            flex-grow: 1;
+            font-size: px-to-rem(12px);
+            line-height: px-to-percent(20px, 14px);
+            color: $primary-black--color;
+        }
+    }
+
+    &__img {
+        position: relative;
+        width: px-to-rem(64px);
+        height: px-to-rem(64px);
+    }
+
+    &__content {
+        @include d-flex(row, center, space-between);
+        position: relative;
+        height: 100%;
+        flex-grow: 1;
+
+        &-left {
+            @include d-flex(column, unset, center, nowrap, px-to-rem(10px));
+            position: relative;
+
+            .name {
+                font-size: px-to-rem(14px);
+                line-height: px-to-percent(20px, 14px);
+                font-weight: 700;
+                color: $primary-black--color;
+            }
+
+            .price {
+                @extend .name;
+                font-weight: 600;
+            }
+
+            .qty-text {
+                font-size: px-to-rem(12px);
+                line-height: px-to-percent(16px, 12px);
+                color: $grey--color;
+            }
+        }
+
+        &-right {
+            @include d-flex(row, center, unset, nowrap, px-to-rem(12px));
+            position: relative;
+
+            .total-price {
+                @extend .name;
+            }
+
+            .icon {
+                @include d-flex(unset, center, center);
+                position: relative;
+                width: px-to-rem(28px);
+                height: px-to-rem(28px);
+                background-color: transparent;
+                border-radius: 50%;
+                transition: $tr-03--ease;
+                cursor: pointer;
+
+                svg {
+                    width: px-to-rem(12px);
+                    height: px-to-rem(12px);
+                    fill: #8f949e;
+                    transition: $tr-03--ease;
+                }
+
+                &:hover {
+                    background-color: $secondary-bg--color;
+
+                    svg {
+                        fill: $denger--color;
+                    }
+                }
+            }
+        }
+    }
+}

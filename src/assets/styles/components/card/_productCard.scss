@@ -1,0 +1,68 @@
+/************************
+** Product Card Styles **
+************************/
+.product-card {
+    @include d-flex(column, unset, unset);
+    position: relative;
+    width: px-to-rem(295px);
+    height: px-to-rem(400px);
+    background-color: #fff;
+    border: 1px solid $border--color;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+    transition: $tr-02--ease;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+
+    .discount {
+        position: absolute;
+        top: px-to-rem(16px);
+        right: px-to-rem(16px);
+        z-index: 9;
+    }
+
+    &__img {
+        position: relative;
+        width: 100%;
+        height: px-to-rem(256px);
+        cursor: pointer;
+
+        img {
+            transform: scale(.8);
+            object-fit: contain;
+        }
+    }
+
+    &__content {
+        @include d-flex(column, unset, unset, nowrap, px-to-rem(16px));
+        position: relative;
+        width: 100%;
+        flex-grow: 1;
+        padding: px-to-rem(24px);
+
+        .price {
+            @include d-flex(row, center, unset, nowrap, px-to-rem(8px));
+            position: relative;
+            font-size: px-to-rem(16px);
+            line-height: px-to-percent(16px, 24px);
+            font-weight: 600;
+            color: $primary-black--color;
+
+            .del {
+                font-size: px-to-rem(14px);
+                line-height: px-to-percent(14px, 20px);
+                text-decoration: line-through;
+                color: #9ca3af;
+            }
+        }
+
+        .name {
+            font-size: px-to-rem(14px);
+            line-height: px-to-percent(14px, 20px);
+            font-weight: 400;
+            color: $grey--color;
+        }
+    }
+}

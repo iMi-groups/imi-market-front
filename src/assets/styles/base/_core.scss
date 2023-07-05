@@ -1,0 +1,64 @@
+@import url(https://fonts.googleapis.com/css?family=Belanosima:regular,600,700);
+
+/****************
+** Core Styles **
+****************/
+:root {
+    font-size: $font-size--default;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: $main-font;
+}
+
+html,
+body {
+    @include full-relative;
+    background-color: #F3F4F6;
+    width: 100vw;
+}
+
+#root {
+    @extend body;
+    @include d-flex(column, unset, unset);
+    width: 100%;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    @include img-normalize;
+}
+
+ol,
+ul,
+li {
+    list-style: none;
+}
+
+button,
+input,
+textarea {
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.container {
+    position: relative;
+    max-width: 100vw;
+    padding: 0 px-to-rem(20px);
+    width: 100%;
+    margin: 0 auto;
+
+    @include breakpoint--sm(400px) {
+        padding: 0 px-to-rem(10px);
+    }
+}

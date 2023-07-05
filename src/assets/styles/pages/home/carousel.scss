@@ -1,0 +1,43 @@
+/********************
+** Carousel Styles **
+********************/
+.swiper-carousel {
+    position: relative;
+    width: 100%;
+    height: px-to-rem(286px);
+    padding: px-to-rem(32px);
+    background-color: #fff;
+    border: {
+        top: 1px solid $border--color;
+        bottom: 1px solid $border--color;
+    }
+
+    @include breakpoint--x-lg {
+        height: px-to-rem(320px);
+    }
+
+    .swiper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+
+        .img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+
+            img {
+                object-fit: contain;
+            }
+        }
+
+        .swiper-pagination-bullet {
+            background-color: #000;
+
+            &-active {
+                background-color: $btn--color;
+            }
+        }
+    }
+}

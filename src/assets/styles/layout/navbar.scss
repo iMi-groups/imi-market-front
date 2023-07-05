@@ -1,0 +1,164 @@
+/******************
+** Navbar Styles **
+******************/
+.header__navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: px-to-rem(20px) 0;
+    height: px-to-rem($header-height);
+    background-color: transparent;
+    z-index: 99;
+    background-color: #fff;
+    border-bottom: 1px solid $border--color;
+
+    &.hidden {
+        .filter__button,
+        .logo,
+        .navbar__links,
+        .action-btns__wrapper {
+            display: none;
+        }
+    }
+
+    .container {
+        @include d-flex(row, center, space-between);
+    }
+
+    &-left {
+        @include d-flex(row, center, unset);
+        position: relative;
+        flex-grow: 1;
+
+        .filter__button {
+            @include d-flex(row, center, unset, nowrap, px-to-rem(5px));
+            display: none;
+            font-size: px-to-rem(16px);
+            font-weight: 600;
+            line-height: px-to-percent(24px, 16px);
+            padding: 6px 16px;
+            margin-right: px-to-rem(20px);
+            background-color: $secondary-bg--color;
+            color: #000;
+            border-radius: 5px;
+            transition: all .3s ease;
+            cursor: pointer;
+
+            @include breakpoint--sm(400px) {
+                margin-right: px-to-rem(10px);
+            }
+
+            path {
+                transition: all .3s ease;
+                fill: #000;
+            }
+
+            &:hover {
+                background-color: $btn--color;
+                color: #fff;
+
+                path {
+                    fill: #fff;
+                }
+            }
+
+            @include breakpoint--sm(500px) {
+                background-color: $btn--color;
+                color: #fff;
+
+                path {
+                    fill: #fff;
+                }
+            }
+
+            .icon {
+                @include d-flex(unset, center, center);
+            }
+
+            @include breakpoint--lg(1280px) {
+                display: flex;
+            } 
+        }
+
+        .logo {
+            @include d-flex(unset, center, center);
+            height: 34px;
+            margin-right: px-to-rem(100px);
+            
+            .icon {
+                @include d-flex(row, center, center);
+                height: 100%;
+                overflow: visible;
+
+                svg {
+                    height: 100%;
+                    border-radius: 5px;
+                }
+            }
+
+            @include breakpoint--lg(1280px) {
+                margin-right: px-to-rem(20px);
+            }
+        }
+    }
+
+    &-right {
+        @include d-flex(row, center, unset);
+
+        .navbar__links {
+            @include d-flex(row, center, unset, nowrap, px-to-rem(40px));
+            position: relative;
+            margin-right: px-to-rem(40px);
+
+            @include breakpoint--lg(1024px) {
+                display: none;
+            }
+
+            .navbar__link {
+                font-size: px-to-rem(16px);
+                line-height: px-to-percent(24px, 16px);
+                font-weight: 400;
+                color: $primary-black--color;
+                transition: all .3s ease;
+
+                &:hover {
+                    color: #0CA385;
+                }
+            }
+        }
+
+        .action-btns__wrapper {
+            @include d-flex(row, center, unset, nowrap, px-to-rem(16px));
+            position: relative;
+
+            .btn {
+                height: 31px;
+                // padding: 6px 16px;
+            }
+
+            @include breakpoint--sm(400px) {
+                gap: px-to-rem(7px);
+            }
+        }
+    }
+
+    @include breakpoint--x-lg(1024px) {
+        background-color: #fff;
+        border-bottom: 1px solid $border--color;
+        
+        .navbar__links {
+            display: none;
+        }
+
+        .search {
+            display: none;
+            max-width: 100%;
+            margin: 0;
+
+            &.active {
+                display: flex;
+            }
+        }
+    }
+}

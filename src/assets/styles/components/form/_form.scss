@@ -1,0 +1,77 @@
+@use 'sass:color';
+
+/****************
+** Form Styles **
+****************/
+.input {
+    @include d-flex(column, unset, unset, nowrap, px-to-rem(12px));
+    position: relative;
+    max-width: px-to-rem(356px);
+    width: 100%;
+
+    label {
+        font-size: px-to-rem(14px);
+        font-weight: 600;
+        color: #4b5563;
+    }
+
+    .input__wrapper {
+        position: relative;
+        width: 100%;
+
+        input {
+            display: inline-block;
+            width: 100%;
+            height: px-to-rem(48px);
+            padding: 0 px-to-rem(16px);
+            border: 1px solid #d1d5db;
+            background-color: #fff;
+            border-radius: 5px;
+            color: $primary-black--color;
+            transition: $tr-03--ease;
+    
+            &:focus {
+                border-color: color.adjust($btn--color, $lightness: -10%);
+            }
+        }
+    }
+
+    &.search {
+        max-width: px-to-rem(500px);
+        width: 100%;
+        margin-right: px-to-rem(50px);
+
+        .input__wrapper {
+            @include d-flex(row, center, center);
+            height: px-to-rem(48px);
+
+            input {
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                padding-left: 56px;
+                background-color: $secondary-bg--color;
+                border-color: transparent;
+
+                &:focus {
+                    background-color: #fff;
+                    border: 1px solid $btn--color;
+                }
+            }
+
+            .icon {
+                @include d-flex(unset, center, center);
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: px-to-rem(56px);
+                height: 100%;
+
+                svg {
+                    width: px-to-rem(16px);
+                    height: px-to-rem(16px);
+                }
+            }
+        }
+    }
+}

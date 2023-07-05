@@ -1,0 +1,20 @@
+/**********************
+** Aside Menu Styles **
+**********************/
+.aside-menu {
+    position: sticky;
+    top: px-to-rem($header-height);
+    width: px-to-rem(240px);
+    height: calc(100vh - px-to-rem($header-height));
+    max-height: 1000px;
+    padding: px-to-rem(32px) px-to-rem(20px);
+    background-color: #fff;
+    border: {
+        top: 1px solid $border--color;
+    }
+    transition: $tr-04--ease;
+
+    @include breakpoint--lg(1280px) {
+        display: none;
+    }
+}

@@ -1,0 +1,69 @@
+@use 'sass:color';
+
+/*****************
+** Alert Styles **
+*****************/
+.alert {
+    position: fixed;
+    z-index: 999;
+
+    @keyframes alert-show {
+        0% {
+            bottom: -100%;
+        }
+        50% {
+            bottom: -50%;
+        }
+        100% {
+            bottom: 10px;
+        }
+    }
+
+    &.construction-alert {
+        bottom: -100%;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 500px;
+        width: 100%;
+        height: 200px;
+        border: 1px solid $border--color;
+        border-radius: 5px;
+        background-color: #fff;
+        transition: all .3s ease;
+        animation: alert-show 1 ease .3s;
+        
+        &.active {
+            bottom: 5px;
+
+            @include breakpoint--lg(1024px) {
+                bottom: 60px;
+            }
+        }
+
+        img {
+            object-fit: contain;
+        }
+    }
+
+    &__close-icon {
+        @include d-flex(unset, center, center);
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        @include circle(28px);
+        background-color: $btn--color;
+        transition: all .3s ease;
+        cursor: pointer;
+        z-index: 9;
+
+        svg {
+            width: px-to-rem(12px);
+            height: px-to-rem(12px);
+
+            path {
+                transition: all .3s ease;
+                fill: #fff;
+            }
+        }
+    }
+}

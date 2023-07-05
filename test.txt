@@ -1,0 +1,80 @@
+import Button from "./components/ui/Button";
+import Input from "./components/form/Input";
+import Card from "./components/card/ProductCard";
+
+const containerStyle = {
+    display: "flex",
+    flexDirection: "column",
+    gap: "40px",
+    padding: "100px",
+  };
+
+const banners = [
+  {
+    id: 1,
+    img: "https://pickbazar-react.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F902%2Foffer-5.png&w=1200&q=75",
+  },
+  {
+    id: 2,
+    img: "https://pickbazar-react.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F902%2Foffer-5.png&w=1200&q=75",
+  },
+  {
+    id: 3,
+    img: "https://pickbazar-react.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F902%2Foffer-5.png&w=1200&q=75",
+  },
+  {
+    id: 4,
+    img: "https://pickbazar-react.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F902%2Foffer-5.png&w=1200&q=75",
+  },
+  {
+    id: 5,
+    img: "https://pickbazar-react.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F902%2Foffer-5.png&w=1200&q=75",
+  },
+  {
+    id: 6,
+    img: "https://pickbazar-react.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F902%2Foffer-5.png&w=1200&q=75",
+  },
+  {
+    id: 7,
+    img: "https://pickbazar-react.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F902%2Foffer-5.png&w=1200&q=75",
+  },
+];
+
+  <span>
+        <Button text="Join" additionalClasses={["primary md"]} />
+      </span>
+      <span>
+        <Button text="Search" additionalClasses={["primary lg"]} />
+      </span>
+      <span>
+        <Button text="Search" additionalClasses={["primary lg search"]} />
+      </span>
+      <span>
+        <Button text="Search" additionalClasses={["primary lg full"]} />
+      </span>
+      <Input label="Name" type="text" />
+      <Card
+        image="https://shop-pickbazar-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F1%2FApples.jpg&w=3840&q=75"
+        price={2}
+        discount={20}
+        name="Apples"
+        countByUser={2}
+      />
+      <Card
+        image="https://shop-pickbazar-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F1%2FApples.jpg&w=3840&q=75"
+        price={1.6}
+        name="Apples"
+      />
+      <MiniCard
+        image="https://shop-pickbazar-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F1%2FApples.jpg&w=3840&q=75"
+        price={2}
+        name="Apples"
+        quantity={2}
+      />
+      <ProductCard
+        image="https://shop-pickbazar-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F1%2FApples.jpg&w=3840&q=75"
+        price={1.6}
+        name="Apples"
+      />
+
+      <Carousel banners={banners} />
